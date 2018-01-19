@@ -32,8 +32,8 @@ Route::get('auth/register', function () {
 });
 
 
-Route::get('profile/{id}', function ($id) {
-    return view('profile', array('id'=>$id));
+Route::get('auth/profile', function () {
+    return view('auth.profile');
 });
 
 Route::get('polls/all', function () {

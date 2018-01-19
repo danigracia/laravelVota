@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="/" style="color:#777"><span style="font-size:15pt">&#9820;</span>Portal de Votos</a>
+        <a class="navbar-brand" href="all" style="color:#777"><span style="font-size:15pt">&#9820;</span>Portal de Votos</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,25 +9,25 @@
         @if( true || Auth::check() )
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item {{ Request::is('polls') && ! Request::is('polls/create')? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/polls')}}">
+                    <li class="nav-item {{ Request::is('') ? 'active' : ''}}">
+                        <a class="nav-link" href="{{url('/polls/create')}}">
                             <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                            Crear consulta
+                            Crear
                         </a>
                     </li>
                     <li class="nav-item {{  Request::is('polls/invite') ? 'active' : ''}}">
                         <a class="nav-link" href="{{url('/polls/invite')}}">
-                            <span>&#10010</span> Invitar a consulta
+                            <span>&#10010</span> Invitar
                         </a>
                     </li>
-                    <li class="nav-item {{  Request::is('polls/all') ? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/polls/all')}}">
-                            <span>&#10010</span> Votar consulta
+                    <li class="nav-item {{  Request::is('polls/vote') ? 'active' : ''}}">
+                        <a class="nav-link" href="{{url('/polls/vote/1')}}">
+                            <span>&#10010</span> Votar
                         </a>
                     </li>
                     <li class="nav-item {{  Request::is('profile') ? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/profile')}}">
-                            <span>&#10010</span> Perfil de cada usuario
+                        <a class="nav-link" href="{{url('auth/profile')}}">
+                             Perfil
                         </a>
                     </li>
                 </ul>
