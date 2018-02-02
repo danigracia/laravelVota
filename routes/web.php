@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'PollsController@index');
+Route::get('/polls', 'PollsController@index');
+Route::get('/polls/create', 'PollsController@create');
+Route::get('/polls/invite', 'PollsController@invite');
+Route::get('/polls/all', 'PollsController@vote');
+Route::get('/polls/vote/{id}', 'PollsController@show');
 
 
 Route::get('auth/login', function () {
@@ -31,27 +34,11 @@ Route::get('auth/register', function () {
 
 });
 
-
 Route::get('auth/profile', function () {
     return view('auth.profile');
 });
 
-Route::get('polls/all', function () {
-    return view('polls.all');
-});
-
-Route::get('polls/create', function () {
-    return view('polls.create');
-});
-
-Route::get('polls/invite', function () {
-    return view('polls.invite');
-});
-
-Route::get('polls/vote/{id}', function ($id) {
-    return view('polls.vote', array('id'=>$id));
-});
-
+Route::resource("polls","PollsController");
 
 
 

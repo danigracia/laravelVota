@@ -2,6 +2,6 @@
 
 @section('content')
 
-    Perfil de usuario
+    <h3 class="text-center">Perfil de usuario</h3>
 
 @stop

@@ -20,8 +20,8 @@
                             <span>&#10010</span> Invitar
                         </a>
                     </li>
-                    <li class="nav-item {{  Request::is('polls/vote') ? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/polls/vote/1')}}">
+                    <li class="nav-item {{  Request::is('polls/all') ? 'active' : ''}}">
+                        <a class="nav-link" href="{{url('/polls/all')}}">
                             <span>&#10010</span> Votar
                         </a>
                     </li>
